@@ -220,6 +220,7 @@ __e)__ $$\left(x+y\right)+\left(x+y^{\prime}\right)$$
 
 - Not like a normal programming language 
 	- Each statement describes one or more gates and/or wires. 
+	![fig04a][fig04a]
 
 
 ## BOOLEAN FUNCTIONS SUMMARY 
@@ -237,3 +238,4 @@ __e)__ $$\left(x+y\right)+\left(x+y^{\prime}\right)$$
 [fig02c]: lect01/lect01-fig02c.png
 [fig03a]: lect01/lect01-fig03a.png
 [fig03b]: lect01/lect01-fig03b.png
+[fig04a]: lect01/lect01-fig04a.png
