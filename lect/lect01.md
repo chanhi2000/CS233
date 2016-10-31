@@ -6,9 +6,9 @@
 	- AND, OR and NOT 
 	- Expressing Boolean functions: 
 		- as __truth tables__
-		- as mathema+cal __expressions__
+		- as mathematical __expressions__
 		- as digital circuits made of __gates__
-		- using __hardware descrip1on languages__
+		- using __hardware description languages__
 
 
 ## COMPUTING: It's all just ones and zeros
@@ -16,14 +16,16 @@
 - For reliability and ease of design, however, we  group ranges of voltages into two discrete, or  digital, values: 1 and 0.
 	- This two-valued domain is referred to as __BINARY__.
 	- Often __1__ is used for __TRUE__ and __0__ for __FALSE__. 
+	![fig01a][fig01a]
 - Everything in digital computers is represented with ones and zeros 
 
 
 ## BOOLEAN VALUES
 - If we think of our digital voltages as two logical 
 values, true and false, we call these “Booleans”  
-	- After the mathema+cian George Boole 
-- For simplicity, we oZen s1ll write digits instead:  
+	- After the mathematician George Boole
+	![fig01b][fig01b]
+- For simplicity, we often s1ll write digits instead:  
 	- 1 is true 
 	- 0 is false 
 - Boolean algebra is the mathema1cs defined over this binary domain. 
@@ -101,14 +103,26 @@ $$
 - There are three basic opera1ons for logical values.
 	 - __AND__: (product of 2 inputs)
 	 	- notation:
+	 	$$
+	 	\begin{matrix}
+	 	xy&&\text{or}x\cdot{y}
+	 	\end{matrix}
+	 	$$
 	 	- truth table:
 	 - __OR__:	(sum of 2 inputs)
 		- notation:
+		$$
+		x+y
+		$$
 		- truth table:
 	 - __NOT__: (complement on one input)
 	 	- notation:
+	 	$$
+	 	\begin{matrix}
+	 	x^{\prime}&&\text{or}&&\bar{x}
+	 	\end{matrix}
+	 	$$
 	 	- truth table:
-
 ## BOOLEAN EXPERSSIONS (formally)
 - Use these basic opera1ons to form more complex expressions: 
 $$
@@ -118,8 +132,13 @@ f(x,y,z)&=(x+y^{\prime})z+x^{\prime}
 $$
 - Some terminology and nota1on: 
 	- .$$f$$ is the name of the function. 
-	- .$$(x,y,z)$$ are the __input variables__1-, each represen+ng 1 or 0. Listing  the inputs is op+onal, but some+mes helpful.
-	- A literal is any occurrence of an input variable or complement. The function above has four literals: $$x$$, $$y^{\prime}$$, $$z$$, and $$x^{\prime}$$.
+	- .$$(x,y,z)$$ are the __input variables__1-, each representing 1 or 0. Listing  the inputs is op+onal, but some+mes helpful.
+	- A literal is any occurrence of an input variable or complement. The function above has four literals: 
+	$$
+	\begin{matrix}
+	x,&&y^{\prime},&&z,&&x^{\prime}
+	\end{matrix}
+	$$
 - Precedences are important, but not too difficult. 
 	- NOT has the highest precedence, followed by AND, and then OR. 
 	- Fully parenthesized, the function above would be kind of messy:
@@ -145,16 +164,16 @@ $$
 	\end{align*}
 	$$
 
-	| x | y | z | f(x,y,z) |
-	| - | - | - | :------: |
-	| 0 | 0 | 0 | 1 |
-	| 0 | 0 | 1 | 1 |
-	| 0 | 1 | 0 | 1 |
-	| 0 | 1 | 1 | 1 |
-	| 1 | 0 | 0 | 0 |
-	| 1 | 0 | 1 | 1 |
-	| 1 | 1 | 0 | 0 |
-	| 1 | 1 | 1 | 1 |
+| x | y | z | f(x,y,z) |
+| - | - | - | :------: |
+| 0 | 0 | 0 | 1 |
+| 0 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 1 |
+| 0 | 1 | 1 | 1 |
+| 1 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 1 |
+| 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 1 |
 
 
 ## PRIMITIVE LOGIC GATES
@@ -163,28 +182,42 @@ __primi1ve logic gate__.
 	- Symbols for each of the logic gates are shown below. 
 	- These gates output the product, sum or complement of their inputs. 
 
+| operation | expression | logic gate |
+| :-------: | :--------: | :--------: |
+| AND | $$xy$$ | ![fig02a][fig02a] |
+| OR | $$x+y$$ | ![fig02b][fig02b] |
+| NOT | $$x^{\prime}$$ | ![fig02c][fig02c] |
+
 
 ## BOOLEAN EXPRESSIONS TO CIRCUITS
 - *Any* Boolean expression can be converted into a __circuit__ in a  straighorward way.
-	- Write a gate for each opera+on in the expression in precedence order.- We typically draw circuits with inputs on leP and outputs on right. 
+	- Write a gate for each opera+on in the expression in precedence order.
+	- We typically draw circuits with inputs on leP and outputs on right. 
 
 
 ## CONVERTING CIRCUITS TO EXPRESSION
 - What Boolean expression does this circuit implement?
-![]()
+![fig03a][fig03a]
+
 __a)__ $$\left(x+y\right)y^{\prime}$$
+
 __b)__ $$x+y+y^{\prime}$$
+
 __c)__ $$xy^{\prime}+y$$
+
 __d)__ $$\left(xy\right)+y^{\prime}$$
+
 __e)__ $$\left(x+y\right)+\left(x+y^{\prime}\right)$$
 
 
 ## HARDWARE DESCRIPTION LANGAUGE
-- Textual descrip1ons of circuits 
+- Textual descriptions of circuits 
 	- (We’re very good at manipula+ng text...) 
+	
 	| A circuit | Verilog HDL Code |
 	| :-------: | :--------------: |
-	| | |
+	| ![fig03b][fig03b]| ? |
+
 - Not like a normal programming language 
 	- Each statement describes one or more gates and/or wires. 
 
@@ -195,5 +228,12 @@ __e)__ $$\left(x+y\right)+\left(x+y^{\prime}\right)$$
 -  AND, OR, and NOT are the basic Boolean opera1ons. 
 -  We can express Boolean functions in many ways: 
 	- Expressions, truth tables, circuits, and HDL code 
-	- These are different representa+ons for equivalent things
+	- These are different representations for equivalent things
 
+[fig01a]: lect01/lect01-fig01a.png
+[fig01b]: lect01/lect01-fig01b.png
+[fig02a]: lect01/lect01-fig02a.png
+[fig02b]: lect01/lect01-fig02b.png
+[fig02c]: lect01/lect01-fig02c.png
+[fig03a]: lect01/lect01-fig03a.png
+[fig03b]: lect01/lect01-fig03b.png
