@@ -105,7 +105,7 @@ $$
 	 	- notation:
 	 	$$
 	 	\begin{matrix}
-	 	xy&&\text{or}x\cdot{y}
+	 	xy&&\text{or}&&x\cdot{y}
 	 	\end{matrix}
 	 	$$
 	 	- truth table:
