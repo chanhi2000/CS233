@@ -212,11 +212,14 @@ __e)__ $$\left(x+y\right)+\left(x+y^{\prime}\right)$$
 
 ## HARDWARE DESCRIPTION LANGAUGE
 - Textual descriptions of circuits 
-	- (We’re very good at manipula+ng text...) 
-	
-	| A circuit | Verilog HDL Code |
-	| :-------: | :--------------: |
-	| ![fig03b][fig03b]| ? |
+	- circuit:
+	![fig03b][fig03b]|
+	- verilog:
+	```verilog
+	wire  x,y,z,a,w;
+	and	  a1(a,x,y);
+	or	  o1(w,a,z);
+	```
 
 - Not like a normal programming language 
 	- Each statement describes one or more gates and/or wires. 
