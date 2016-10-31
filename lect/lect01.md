@@ -4,7 +4,7 @@
 - Basic Boolean expressions 
 	- Booleans 
 	- AND, OR and NOT 
-	- Expressing Boolean func+ons: 
+	- Expressing Boolean functions: 
 		- as __truth tables__
 		- as mathema+cal __expressions__
 		- as digital circuits made of __gates__
@@ -47,7 +47,7 @@ $$
 - A __truth table__ shows all possible inputs & outputs of a func1on.  
 - Each input variable is either 1 or 0.  (so are the outputs.) 
 	- Because there are only a finite number of values (1 and 0), truth tables themselves are finite. 
-	- A func+on with n variables has 2n possible combinations of inputs.
+	- A function with n variables has 2n possible combinations of inputs.
 
 | x | y | z | f(x,y,z) |
 | - | - | - | :------: |
@@ -115,12 +115,12 @@ f(x,y,z)&=(x+y\prime)z+x\prime
 \end{align*}
 $$
 - Some terminology and nota1on: 
-	- .$$f$$ is the name of the func+on. 
-	- .$$(x,y,z)$$ are the __input variables__, each represen+ng 1 or 0. Listing  the inputs is op+onal, but some+mes helpful.
+	- .$$f$$ is the name of the function. 
+	- .$$(x,y,z)$$ are the __input variables__1-, each represen+ng 1 or 0. Listing  the inputs is op+onal, but some+mes helpful.
 	- A literal is any occurrence of an input variable or complement. The function above has four literals: $$x$$, $$y\prime$$, $$z$$, and $$x\prime$$.
 - Precedences are important, but not too difficult. 
 	- NOT has the highest precedence, followed by AND, and then OR. 
-	- Fully parenthesized, the func+on above would be kind of messy:
+	- Fully parenthesized, the function above would be kind of messy:
 	$$
 	\begin{align*}
 	f(x,y,z)&= \left(\left(\left(x+\left(y\prime\right)\right)z\right)+x\prime\right)
@@ -129,8 +129,69 @@ $$
 
 
 ## BOOLEAN EXPRESSIONS TO TRUTH TABLES
+- To compute a truth table given a Boolean expression: 
+	- Evaluate the func+on for every combination of inputs.
+	$$
+	\begin{align*}
+	f(x,y,z)&=\left(x+y\prime\right)z+x\prime\\
+	f(0,0,0)&=\left(0+1\right)0+1\\
+	&=1\\
+	\vdots&\vdots\\
+	f(1,0,1)&=\left(1+1\right)1+0\\
+	&=1\\
+	\vdots&\vdots
+	\end{align*}
+	$$
+	| x | y | z | f(x,y,z) |
+	| - | - | - | :------: |
+	| 0 | 0 | 0 | 1 |
+	| 0 | 0 | 1 | 1 |
+	| 0 | 1 | 0 | 1 |
+	| 0 | 1 | 1 | 1 |
+	| 1 | 0 | 0 | 0 |
+	| 1 | 0 | 1 | 1 |
+	| 1 | 1 | 0 | 0 |
+	| 1 | 1 | 1 | 1 |
 
 
+## PRIMITIVE LOGIC GATES
+- Each of our basic opera1ons can be implemented in hardware using a 
+__primi1ve logic gate__.
+	- Symbols for each of the logic gates are shown below. 
+	- These gates output the product, sum or complement of their inputs. 
 
 
+## BOOLEAN EXPRESSIONS TO CIRCUITS
+- *Any* Boolean expression can be converted into a __circuit__ in a  straighorward way.
+	- Write a gate for each opera+on in the expression in precedence order.- We typically draw circuits with inputs on leP and outputs on right. 
 
+
+## CONVERTING CIRCUITS TO EXPRESSION
+- What Boolean expression does this circuit implement?
+![]()
+__a)__ $$\left(x+y\right)y\prime$$
+__b)__ $$x+y+y\prime$$
+__c)__ $$xy\prime+y$$
+__d)__ $$\left(xy\right)+y\prime$$
+__e)__ $$\left(x+y\right)+\left(x+y\prime\right)$$
+
+
+## HARDWARE DESCRIPTION LANGAUGE
+- Textual descrip1ons of circuits 
+	- (We’re very good at manipula+ng text...) 
+	| A circuit | Verilog HDL Code |
+	| :-------: | :--------------: |
+	| | |
+- Not like a normal programming language 
+	- Each statement describes one or more gates and/or wires. 
+
+
+## BOOLEAN FUNCTIONS SUMMARY 
+-  We can interpret high and low voltages as true and false.  
+-  A Boolean variable can be either 1 or 0. 
+-   AND, OR, and NOT are the basic Boolean opera1ons. 
+-   We can express Boolean func1ons in many ways: 
+	- Expressions, truth tables, circuits, and HDL code 
+	- These are different representa+ons for equivalent things
+
+	
