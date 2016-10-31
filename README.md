@@ -49,7 +49,4 @@ Some of the discussion sections in the first part of the course consist of Veril
 The second and third part of this course follows the book on Computer Organization & Design: The Hardware/Software Interface very closely, so it is highly recommended, but many students find they don't refer to the book. Any of the second, third, or fourth editions are fine. 
 
 
-## 
-
-
 [1]: https://wiki.cites.illinois.edu/wiki/display/cs233sp16/Home
