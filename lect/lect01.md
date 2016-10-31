@@ -30,21 +30,21 @@ values, true and false, we call these “Booleans”
 
 
 ## BOOLEAN FUNCTIONS
-- Just like in other mathema1cs, we can define func1ons: 
+- Just like in other mathema1cs, we can define functions: 
 $$
 \begin{align*}
 y=f(x)
 \end{align*}
 $$
-- The output is specified purely by the func1on & inputs 
+- The output is specified purely by the function & inputs 
 - Because there are a finite number (2) of boolean values...
-	- There are a finite number of boolean func1ons
-- For 1ainput func1ons (*e.g.*, $$f(x)$$) there are only 4 possible
+	- There are a finite number of boolean functions
+- For 1-input functions (*e.g.*, $$f(x)$$) there are only 4 possible
 	- (let’s first see how to represent these...)
 
 
 ## TRUTH TABLES
-- A __truth table__ shows all possible inputs & outputs of a func1on.  
+- A __truth table__ shows all possible inputs & outputs of a function.  
 - Each input variable is either 1 or 0.  (so are the outputs.) 
 	- Because there are only a finite number of values (1 and 0), truth tables themselves are finite. 
 	- A function with n variables has 2n possible combinations of inputs.
@@ -66,7 +66,7 @@ $$
 y=f(x)
 \end{align*}
 $$
-- A 1-input Boolean func1on has $$2^{1}=2$$ possible inputs:
+- A 1-input Boolean function has $$2^{1}=2$$ possible inputs:
 
 | x | f(x) |
 | - | :--: |
@@ -86,12 +86,14 @@ y=f(x,y)
 \end{align*}
 $$
 - 4 possible inputs, 16 possible functions:
+
 | $$(x,y)$$ | f0 | f1 | f2 | f3 | f4 | f5 | f6 | f7 | f8 | f9 | f10 | f11 | f12 | f13 | f14 | f15 |
 | :-------: | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | :-: | :-: | :-: | :-: | :-: | :-: |
 | $$(0,0)$$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | $$(0,1)$$ | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
 | $$(1,0)$$ | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1 |
 | $$(1,1)$$ | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 |
+
 - We'll focus on 2 for now.
 
 
@@ -111,19 +113,19 @@ $$
 - Use these basic opera1ons to form more complex expressions: 
 $$
 \begin{align*}
-f(x,y,z)&=(x+y\prime)z+x\prime
+f(x,y,z)&=(x+y^{\prime})z+x^{\prime}
 \end{align*}
 $$
 - Some terminology and nota1on: 
 	- .$$f$$ is the name of the function. 
 	- .$$(x,y,z)$$ are the __input variables__1-, each represen+ng 1 or 0. Listing  the inputs is op+onal, but some+mes helpful.
-	- A literal is any occurrence of an input variable or complement. The function above has four literals: $$x$$, $$y\prime$$, $$z$$, and $$x\prime$$.
+	- A literal is any occurrence of an input variable or complement. The function above has four literals: $$x$$, $$y^{\prime}$$, $$z$$, and $$x^{\prime}$$.
 - Precedences are important, but not too difficult. 
 	- NOT has the highest precedence, followed by AND, and then OR. 
 	- Fully parenthesized, the function above would be kind of messy:
 	$$
 	\begin{align*}
-	f(x,y,z)&= \left(\left(\left(x+\left(y\prime\right)\right)z\right)+x\prime\right)
+	f(x,y,z)&= \left(\left(\left(x+\left(y^{\prime}\right)\right)z\right)+x^{\prime}\right)
 	\end{align*}
 	$$
 
@@ -133,15 +135,16 @@ $$
 	- Evaluate the func+on for every combination of inputs.
 	$$
 	\begin{align*}
-	f(x,y,z)&=\left(x+y\prime\right)z+x\prime\\
+	f(x,y,z)&=\left(x+y^{\prime}\right)z+x^{\prime}\\
 	f(0,0,0)&=\left(0+1\right)0+1\\
 	&=1\\
-	\vdots&\vdots\\
+	&\vdots\\
 	f(1,0,1)&=\left(1+1\right)1+0\\
 	&=1\\
-	\vdots&\vdots
+	&\vdots
 	\end{align*}
 	$$
+
 	| x | y | z | f(x,y,z) |
 	| - | - | - | :------: |
 	| 0 | 0 | 0 | 1 |
@@ -169,11 +172,11 @@ __primi1ve logic gate__.
 ## CONVERTING CIRCUITS TO EXPRESSION
 - What Boolean expression does this circuit implement?
 ![]()
-__a)__ $$\left(x+y\right)y\prime$$
-__b)__ $$x+y+y\prime$$
-__c)__ $$xy\prime+y$$
-__d)__ $$\left(xy\right)+y\prime$$
-__e)__ $$\left(x+y\right)+\left(x+y\prime\right)$$
+__a)__ $$\left(x+y\right)y^{\prime}$$
+__b)__ $$x+y+y^{\prime}$$
+__c)__ $$xy^{\prime}+y$$
+__d)__ $$\left(xy\right)+y^{\prime}$$
+__e)__ $$\left(x+y\right)+\left(x+y^{\prime}\right)$$
 
 
 ## HARDWARE DESCRIPTION LANGAUGE
@@ -189,9 +192,8 @@ __e)__ $$\left(x+y\right)+\left(x+y\prime\right)$$
 ## BOOLEAN FUNCTIONS SUMMARY 
 -  We can interpret high and low voltages as true and false.  
 -  A Boolean variable can be either 1 or 0. 
--   AND, OR, and NOT are the basic Boolean opera1ons. 
--   We can express Boolean func1ons in many ways: 
+-  AND, OR, and NOT are the basic Boolean opera1ons. 
+-  We can express Boolean functions in many ways: 
 	- Expressions, truth tables, circuits, and HDL code 
 	- These are different representa+ons for equivalent things
 
-	
